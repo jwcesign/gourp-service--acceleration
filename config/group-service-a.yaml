@@ -1,0 +1,19 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: group-service-a
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "1"
+    spec:
+      containerConcurrency: 1
+      containers:
+        - image: ko://group-service-acceleration/cmd/group-service
+          env:
+            - name: NOW_SERVICE
+              value: "group-service-a"
+            - name: NEXT_SERVICE
+              value: "group-service-b.default.svc"
