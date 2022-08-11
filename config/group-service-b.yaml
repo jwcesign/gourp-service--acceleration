@@ -16,4 +16,4 @@ spec:
             - name: NOW_SERVICE
               value: "group-service-b"
             - name: NEXT_SERVICE
-              value: "group-service-c.default.svc"
+              value: "group-service-c.default"
