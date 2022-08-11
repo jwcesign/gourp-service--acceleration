@@ -1,4 +1,4 @@
-# gourp-service-acceleration
+# group-service-acceleration
 
 ## Background
 Knative recently lacks a way to handle group-service(i.e. A and B are different knative services, which form a complex function. The requesting path is: user-client requests ksvc A, then ksvc A requests ksvc B). As a result, cloud providers may encounter difficulties with very long response times(ksvc A cold start time + ksvc B cold start time). To alleviate this issue, this feature track proposes implementing a group-service-acceleration functionality that can scale up group-service at same time when they need to call each other. This will reduce the response time of requesting group-service. Also, the longer the requesting path, the more response time is reduced.
